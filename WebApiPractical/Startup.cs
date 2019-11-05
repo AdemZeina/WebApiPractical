@@ -25,10 +25,14 @@ namespace WebApiPractical
 
         public IConfiguration Configuration { get; }
 
+
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IProjectsService, ProjectsService>();
+            services.AddScoped<ICountriesService, CountriesService>();
+
             string securityKey = "493ab24b-0c99-3341-bf32-76037c2f36eb$localhost:52020";
             var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(securityKey));
 
@@ -65,6 +69,19 @@ namespace WebApiPractical
                         ValidIssuer = "localhost:52020"
                     };
                 });
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllHeaders",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                    });
+            });
+
+
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -76,6 +93,7 @@ namespace WebApiPractical
                 app.UseDeveloperExceptionPage();
             }
             app.UseAuthentication();
+            app.UseCors("AllowAllHeaders");
             app.UseMvc();
         }
     }

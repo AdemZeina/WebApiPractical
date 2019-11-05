@@ -8,9 +8,13 @@ namespace WebApiPractical.Infrastructure.Seeder
     {
         public static List<Country> Countries=new List<Country>()
         {
+            new Country(){Id = 0,Name = "Select All",CreateDate = DateTime.Now},
             new Country(){Id = 1,Name = "Turkey",CreateDate = DateTime.Now},
             new Country(){Id = 2,Name = "Germany",CreateDate = DateTime.Now},
             new Country(){Id = 3,Name = "Syria",CreateDate = DateTime.Now},
+            new Country(){Id = 4,Name = "Lebanon",CreateDate = DateTime.Now},
+            new Country(){Id = 5,Name = "India",CreateDate = DateTime.Now},
+            new Country(){Id = 6,Name = "Egypt",CreateDate = DateTime.Now},
         };
 
         public static List<Customer> Customers = new List<Customer>()
@@ -25,8 +29,11 @@ namespace WebApiPractical.Infrastructure.Seeder
             new Projects(){Id=1,ProjectName = ".Net Web Project",Country = GetCountryById(1),Customer = GetCustomerById(3),CreateDate = DateTime.Now},
             new Projects(){Id=2,ProjectName = "Java Projects",Country = GetCountryById(1),Customer = GetCustomerById(2),CreateDate = DateTime.Now},
             new Projects(){Id=3,ProjectName = "Mobile Projects",Country = GetCountryById(1),Customer = GetCustomerById(1),CreateDate = DateTime.Now},
-            new Projects(){Id=4,ProjectName = ".Net Web Project",Country = GetCountryById(2),Customer = GetCustomerById(1),CreateDate = DateTime.Now},
-            new Projects(){Id=5,ProjectName = ".Net Web Project",Country = GetCountryById(3),Customer = GetCustomerById(2),CreateDate = DateTime.Now},
+            new Projects(){Id=4,ProjectName = ".Net Mobile Project",Country = GetCountryById(2),Customer = GetCustomerById(1),CreateDate = DateTime.Now},
+            new Projects(){Id=5,ProjectName = "Vini Project",Country = GetCountryById(3),Customer = GetCustomerById(2),CreateDate = DateTime.Now},
+            new Projects(){Id=6,ProjectName = "Ericsson Projects",Country = GetCountryById(4),Customer = GetCustomerById(2),CreateDate = DateTime.Now},
+            new Projects(){Id=7,ProjectName = "Vitelco Projects",Country = GetCountryById(5),Customer = GetCustomerById(3),CreateDate = DateTime.Now},
+            new Projects(){Id=8,ProjectName = "Tibco Project",Country = GetCountryById(6),Customer = GetCustomerById(3),CreateDate = DateTime.Now},
           
         };
 

@@ -11,5 +11,10 @@ namespace WebApiPractical.Infrastructure.Services
         {
             return DataJsonSeeder.LoadData.Where(x=>x.Country.Id== countryId).OrderByDescending(y=>y.Id).ToList();
         }
+
+        public List<Projects> GetProjectList()
+        {
+            return DataJsonSeeder.LoadData.OrderByDescending(y => y.Id).ToList();
+        }
     }
 }

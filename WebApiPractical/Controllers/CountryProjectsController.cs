@@ -12,7 +12,7 @@ namespace WebApiPractical.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class CountryProjectsController : ControllerBase
     {
         private readonly IProjectsService _projectsService;
@@ -32,7 +32,7 @@ namespace WebApiPractical.Controllers
         {
             if (request.CountryId <= 0)
             {
-                throw new Exception("Country is empty");
+               return _projectsService.GetProjectList();
             }
             return _projectsService.GetProjectListByCountryId(request.CountryId);
         }

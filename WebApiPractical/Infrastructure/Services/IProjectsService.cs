@@ -6,5 +6,7 @@ namespace WebApiPractical.Infrastructure.Services
     public interface IProjectsService
     {
         List<Projects> GetProjectListByCountryId(int countryId);
+
+        List<Projects> GetProjectList();
     }
 }
