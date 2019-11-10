@@ -13,7 +13,7 @@ namespace WebApiPractical.Infrastructure.Services
         }
 
         public List<Projects> GetProjectList()
-        {
+        { 
             return DataJsonSeeder.LoadData.OrderByDescending(y => y.Id).ToList();
         }
     }
