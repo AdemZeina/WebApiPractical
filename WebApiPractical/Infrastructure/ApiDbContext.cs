@@ -4,6 +4,6 @@ namespace WebApiPractical.Infrastructure
 {
     public class ApiDbContext:IdentityDbContext
     {
-        
+           
     }
 }
