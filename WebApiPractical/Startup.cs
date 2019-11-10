@@ -42,16 +42,6 @@ namespace WebApiPractical
                 {
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
-                        ////what to validate
-                        //ValidateIssuer = true,
-                        //ValidateAudience = true,
-                        //ValidateIssuerSigningKey = true,
-                        ////setup validate data
-                        //ValidIssuer = "localhost:52020",
-                        //ValidAudience = "readers",
-                        //IssuerSigningKey = symmetricSecurityKey,
-                        //RequireExpirationTime = true
-
                         // Clock skew compensates for server time drift.
                         // We recommend 5 minutes or less:
                         ClockSkew = TimeSpan.FromMinutes(5),
